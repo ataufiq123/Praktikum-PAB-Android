@@ -3,10 +3,12 @@ package id.co.namasa.studycase1;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,11 +38,16 @@ public class MainActivity extends AppCompatActivity {
         porsi = porsiEditText.getText().toString();
         String place = eatbusBtn.getText().toString();
 
-        intent.putExtra("food",food);
-        intent.putExtra("porsi",porsi);
-        intent.putExtra("place",place);
 
-        startActivity(intent);
+        if (food.isEmpty()){
+            Toast.makeText(this, "Lengkapi Formnya", Toast.LENGTH_SHORT).show();
+        }else{
+            intent.putExtra("food",food);
+            intent.putExtra("porsi",porsi);
+            intent.putExtra("place",place);
+            startActivity(intent);
+        }
+
     }
 
     public void placeAbnormal(View view){
@@ -50,11 +57,14 @@ public class MainActivity extends AppCompatActivity {
         porsi = porsiEditText.getText().toString();
         String place = abnormalBtn.getText().toString();
 
-        intent.putExtra("food",food);
-        intent.putExtra("porsi",porsi);
-        intent.putExtra("place",place);
-
-        startActivity(intent);
+        if (food.isEmpty()||porsi.isEmpty()){
+            Toast.makeText(this, "Lengkapi Formnya", Toast.LENGTH_SHORT).show();
+        }else{
+            intent.putExtra("food",food);
+            intent.putExtra("porsi",porsi);
+            intent.putExtra("place",place);
+            startActivity(intent);
+        }
 
     }
 }
