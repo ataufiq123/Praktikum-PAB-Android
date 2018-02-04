@@ -16,6 +16,7 @@
         android:text="Makan Malam"/>
 
     <TextView
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
@@ -23,13 +24,17 @@
         android:text="dengan Miilea"/>
 
     <EditText
+        android:id="@+id/foodEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Nasi Uduk"
         android:layout_margin="20dp"
         />
     <EditText
+        android:id="@+id/porsiEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="2"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         />
@@ -42,18 +47,22 @@
         >
 
         <Button
+            android:id="@+id/eatbusBtn"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:onClick="placeEatbus"
             android:text="Eatbus"
             android:background="@color/colorAccent"/>
         <Button
+            android:id="@+id/abnormalBtn"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_marginLeft="10dp"
             android:layout_height="match_parent"
             android:background="@color/colorAccent"
-            android:text="ABNORMAL"/>
+            android:onClick="placeAbnormal"
+            android:text="Abnormal"/>
     </LinearLayout>
 
 
